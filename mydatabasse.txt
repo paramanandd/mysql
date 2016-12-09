@@ -1,0 +1,37 @@
+CREATE DATABASE `mydatabase` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+DROP TABLE IF EXISTS `mydatabase`.`book`;
+CREATE TABLE  `mydatabase`.`book` (
+  `bookid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `bookname` varchar(45) NOT NULL,
+  `author` varchar(45) NOT NULL,
+  `price` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`bookid`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `mydatabase`.`login`;
+CREATE TABLE  `mydatabase`.`login` (
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `role` varchar(45) DEFAULT 'user',
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `mydatabase`.`review`;
+CREATE TABLE  `mydatabase`.`review` (
+  `reviewid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `comment` varchar(45) DEFAULT NULL,
+  `bookname` varchar(45) NOT NULL,
+  `user` varchar(45) NOT NULL,
+  PRIMARY KEY (`reviewid`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `mydatabase`.`student`;
+CREATE TABLE  `mydatabase`.`student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
